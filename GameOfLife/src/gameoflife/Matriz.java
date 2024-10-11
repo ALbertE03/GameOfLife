@@ -1,7 +1,7 @@
 package gameoflife;
 
-import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Matriz {
@@ -32,11 +32,11 @@ public class Matriz {
     }
 
     public Object getElemeto(int fila, int col) {
-        // aqui necesito comprobar cuando una clave no está en el diccionario
-        // si no está devuelve 0, o False 🤔
-        // xq el get a una clave que no existe debe dar excepción a si e en la pitón
         String clave = fila + "," + col;
-        return this.matriz.get(clave);
+        if (this.matriz.containsKey(clave)) {
+            return this.matriz.get(clave);
+        }
+        return false;
     }
 
     public void eliminar(int fila, int col) {
@@ -45,8 +45,6 @@ public class Matriz {
         this.matriz.remove(clave);
     }
 
-    // pinga que cantidad de errores de tipos de datos 😂 puto java
-    // casteos gotys
     public List<Object> elementosAdyacentes(int fila, int col) {
         List<Object> adyacentes = new ArrayList<>();
         int[][] movimientos = {
@@ -56,9 +54,12 @@ public class Matriz {
         for (int[] dir : movimientos) {
             int nuevaFila = fila + dir[0];
             int nuevaCol = col + dir[1];
-            Object valor = (Object) getElemeto(nuevaFila, nuevaCol);
-            // los elementos que se agreguen que sean 0 significa que están muertas las células
-            adyacentes.add(valor);
+            if (nuevaFila >= 0 && nuevaFila < this.row && nuevaCol >= 0 && nuevaCol < this.col) {
+                Object valor = (Object) getElemeto(nuevaFila, nuevaCol);
+                // los elementos que se agreguen que sean False significa que están muertas las células
+                adyacentes.add(valor);
+            }
+
         }
         return adyacentes;
     }
