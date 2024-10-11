@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Matriz {
 
-    private int row;
-    private int col;
+    private final int row;
+    private final int col;
     private HashMap<String, Object> matriz;
 
     public Matriz(int row, int col) {
@@ -36,6 +36,7 @@ public class Matriz {
         if (this.matriz.containsKey(clave)) {
             return this.matriz.get(clave);
         }
+        // si devuelve false es que no hay niguna celula iniciada en esa casilla
         return false;
     }
 

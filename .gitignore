@@ -31,3 +31,4 @@ replay_pid*
 
 #archivos del sistema
 Thumbs.db
+/GameOfLife/build/
