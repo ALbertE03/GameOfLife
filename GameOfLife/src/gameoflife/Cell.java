@@ -1,9 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package gameoflife;
 
 public class Cell {
-    
+    private boolean vivo;
+    public Cell(boolean vivo){
+    this.vivo = vivo;
+    }
+
 }
