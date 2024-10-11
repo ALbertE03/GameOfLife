@@ -19,7 +19,7 @@ public class Matriz {
     public void agregar(int fila, int col, Object valor) {
         if (fila >= 0 && fila < this.row && col >= 0 && col < this.col) {
             String clave = fila + "," + col;
-            matriz.put(clave, valor);
+            this.matriz.put(clave, valor);
         }
     }
 
@@ -40,9 +40,11 @@ public class Matriz {
     }
 
     public void eliminar(int fila, int col) {
-        // comprobar lo mismo aqui de las claves ...
         String clave = fila + "," + col;
-        this.matriz.remove(clave);
+        if (this.matriz.containsKey(clave)) {
+            this.matriz.remove(clave);
+        }
+
     }
 
     public List<Object> elementosAdyacentes(int fila, int col) {
@@ -50,7 +52,6 @@ public class Matriz {
         int[][] movimientos = {
             {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}
         };
-        // falta tener en cuenta cuando un movimiennto se salga del tamaño de la matriz
         for (int[] dir : movimientos) {
             int nuevaFila = fila + dir[0];
             int nuevaCol = col + dir[1];
