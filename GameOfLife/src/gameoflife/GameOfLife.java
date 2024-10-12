@@ -87,12 +87,29 @@ public class GameOfLife {
                 timer.start();
             }
         });
+        // botón para pausar el juego
+        JButton pausarJuego = new JButton("Pausar Juego");
+        iniciarJuego.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
+        //botón para reiniciar el juego
+        JButton reiniciarJuego = new JButton("Reiniciar Juego");
+        iniciarJuego.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
 
         // Panel para los botones
         JPanel panelBotones = new JPanel();
         panelBotones.add(seleccionarColor);
         panelBotones.add(iniciarJuego);
-
+        panelBotones.add(pausarJuego);
+        panelBotones.add(reiniciarJuego);
         tablero.add(panelBotones, BorderLayout.SOUTH);
 
         tablero.setSize(600, 600);
