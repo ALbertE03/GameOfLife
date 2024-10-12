@@ -38,15 +38,15 @@ public class GameOfLife {
                 int fila = i;
                 int col = j;
 
-                // Añadir MouseListener para pintar células
+                // Añadir MouseListener para pintar celulas
                 panel.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
                         if (panel.getBackground() == Color.WHITE) {
-                            panel.setBackground(colorCelula); // Célula viva con color seleccionado
+                            panel.setBackground(colorCelula); // celula viva con color seleccionado
                             matriz.agregar(fila, col, true);
                         } else {
-                            panel.setBackground(Color.WHITE); // Célula muerta
+                            panel.setBackground(Color.WHITE); // se muere
                             matriz.eliminar(fila, col);
                         }
                     }
@@ -59,7 +59,7 @@ public class GameOfLife {
 
         tablero.add(panelJuego, BorderLayout.CENTER);
 
-        // Botón para seleccionar color
+        // Botton para seleccionar color
         JButton seleccionarColor = new JButton("Seleccionar Color");
         seleccionarColor.addActionListener(new ActionListener() {
             @Override
@@ -71,7 +71,7 @@ public class GameOfLife {
             }
         });
 
-        // Botón para iniciar el juego
+        // Boton para iniciar el juego
         JButton iniciarJuego = new JButton("Iniciar Juego");
         iniciarJuego.addActionListener(new ActionListener() {
             @Override
@@ -99,7 +99,7 @@ public class GameOfLife {
     }
 
     private static void actualizarJuego() {
-        // Lógica para actualizar el estado de las células según las reglas del Juego de la Vida
+        // Lógica para actualizar el estado de las celulas segun las reglas del Juego de la Vida
         Matriz nuevaMatriz = new Matriz(FILAS, COLUMNAS);
 
         for (int i = 0; i < FILAS; i++) {
