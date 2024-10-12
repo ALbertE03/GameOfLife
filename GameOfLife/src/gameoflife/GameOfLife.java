@@ -10,8 +10,8 @@ import java.util.List;
 
 public class GameOfLife {
 
-    private static final int FILAS = 60;
-    private static final int COLUMNAS = 60;
+    private static final int FILAS = 40;
+    private static final int COLUMNAS = 40;
     private static Matriz matriz;
     private static JPanel[][] paneles;
     private static Color colorCelula = Color.BLACK; // Color por defecto de la célula
@@ -22,6 +22,7 @@ public class GameOfLife {
 
         // Inicializar JFrame
         JFrame tablero = new JFrame("Game of Life");
+        tablero.setExtendedState(JFrame.MAXIMIZED_BOTH);
         tablero.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tablero.setLayout(new BorderLayout());
 
