@@ -28,7 +28,7 @@ public class GameOfLife {
         tablero.setLayout(new BorderLayout());
 
         CrearPaneles(tablero);
-        JButton iniciarJuego = new JButton("Iniciar Juego");
+        JButton iniciarJuego = new JButton("Iniciar/Reanudar Juego");
         IniciarJuego(iniciarJuego);
 
         // Botón para seleccionar color
@@ -55,17 +55,7 @@ public class GameOfLife {
             }
         });
 
-        // botón para reanudar el juego
-        JButton reanudarJuego = new JButton("Reanudar Juego");
-        reanudarJuego.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (timer != null && !timer.isRunning()) {
-                    timer.start(); // lo reanuda
-                    
-                }
-            }
-        });
+        
 
         // botón para reiniciar el juego
         JButton reiniciarJuego = new JButton("Reiniciar Juego");
@@ -81,7 +71,6 @@ public class GameOfLife {
         panelBotones.add(seleccionarColor);
         panelBotones.add(iniciarJuego);
         panelBotones.add(pausarJuego);
-        panelBotones.add(reanudarJuego); 
         panelBotones.add(reiniciarJuego);
         
         tablero.add(panelBotones, BorderLayout.SOUTH);
