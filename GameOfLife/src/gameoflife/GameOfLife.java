@@ -15,7 +15,7 @@ public class GameOfLife {
     private static Matriz matriz;
     private static JPanel[][] paneles;
     private static Color colorCelula = Color.BLACK; // Color por defecto de la célula
-    private static Timer timer; // Timer for game updates
+    private static Timer timer; 
 
     public static void main(String[] args) {
         matriz = new Matriz(FILAS, COLUMNAS);
